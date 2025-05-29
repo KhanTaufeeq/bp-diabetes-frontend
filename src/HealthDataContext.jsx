@@ -118,7 +118,7 @@ const HealthDataProvider = ({ children }) => {
       // Set new user
       localStorage.setItem("accessToken", res.data.accessToken);
       localStorage.setItem("userName", userName);
-      window.location.href = "/dashboard";
+      navigate('/dashboard');
     } catch (error) {
       setAuthError(error.response?.data?.message || "Login Failed");
     } finally {
