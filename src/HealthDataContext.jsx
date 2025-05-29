@@ -73,7 +73,7 @@ const HealthDataProvider = ({ children }) => {
     setAuthError("");
 
     try {
-      const res = await axios.post("http://localhost:5000/api/user/register", {
+      const res = await axios.post("https://bp-diabetes-backend.onrender.com/api/user/register", {
         fullName: fullName,
         userName: registerUserName,
         email: email,
@@ -103,7 +103,7 @@ const HealthDataProvider = ({ children }) => {
     setAuthError("");
 
     try {
-      const res = await axios.post("http://localhost:5000/api/user/login", {
+      const res = await axios.post("https://bp-diabetes-backend.onrender.com/api/user/login", {
         userName,
         password,
       });
@@ -158,7 +158,7 @@ const HealthDataProvider = ({ children }) => {
     setLoading((prev) => ({ ...prev, bp: true }));
 
     try {
-      const response = await axios.get("http://localhost:5000/api/bp", {
+      const response = await axios.get("https://bp-diabetes-backend.onrender.com/api/bp", {
         headers: {
           Authorization: `Bearer ${accessToken}`,
         },
@@ -186,7 +186,7 @@ const HealthDataProvider = ({ children }) => {
     setLoading((prev) => ({ ...prev, sugar: true }));
 
     try {
-      const response = await axios.get("http://localhost:5000/api/sugar", {
+      const response = await axios.get("https://bp-diabetes-backend.onrender.com/api/sugar", {
         headers: {
           Authorization: `Bearer ${accessToken}`,
           "Content-Type": "application/json",
@@ -231,7 +231,7 @@ const HealthDataProvider = ({ children }) => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/bp/add",
+        "https://bp-diabetes-backend.onrender.com/api/bp/add",
         {
           systolic: parseInt(systolic),
           diastolic: parseInt(diastolic),
@@ -265,7 +265,7 @@ const HealthDataProvider = ({ children }) => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/sugar/add",
+        "https://bp-diabetes-backend.onrender.com/api/sugar/add",
         {
           fasting: parseFloat(fasting),
           random: parseFloat(random),
@@ -299,7 +299,7 @@ const HealthDataProvider = ({ children }) => {
     try {
       setLoading((prev) => ({ ...prev, bp: true }));
       const response = await axios.delete(
-        `http://localhost:5000/api/bp/delete/${id}`,
+        `https://bp-diabetes-backend.onrender.com/api/bp/delete/${id}`,
         {
           headers: {
             Authorization: `Bearer ${accessToken}`,
@@ -326,7 +326,7 @@ const HealthDataProvider = ({ children }) => {
     try {
       setLoading((prev) => ({ ...prev, sugar: true }));
       const response = await axios.delete(
-        `http://localhost:5000/api/sugar/delete/${id}`,
+        `https://bp-diabetes-backend.onrender.com/api/sugar/delete/${id}`,
         {
           headers: {
             Authorization: `Bearer ${accessToken}`,
@@ -410,7 +410,7 @@ const HealthDataProvider = ({ children }) => {
     setLoading((prev) => ({ ...prev, bp: true }));
     try {
       const response = await axios.put(
-        `http://localhost:5000/api/bp/edit/${id}`,
+        `https://bp-diabetes-backend.onrender.com/api/bp/edit/${id}`,
         {
           systolic: parseInt(editingRecord.systolic),
           diastolic: parseInt(editingRecord.diastolic),
@@ -469,7 +469,7 @@ const HealthDataProvider = ({ children }) => {
     setLoading((prev) => ({ ...prev, sugar: true }));
     try {
       const response = await axios.put(
-        `http://localhost:5000/api/sugar/edit/${id}`,
+        `https://bp-diabetes-backend.onrender.com/api/sugar/edit/${id}`,
         {
           fasting: parseInt(editingSugarRecord.fasting),
           random: parseInt(editingSugarRecord.random),
